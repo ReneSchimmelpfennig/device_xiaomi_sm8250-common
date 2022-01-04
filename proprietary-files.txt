@@ -246,27 +246,6 @@ vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
-# Dax - 7T modified to work with Moto Dolby
-#vendor/etc/dolby/dax-default.xml|de2be9e271684fc0493eb67b6dcb03d0100c409e
-
-# Dolby - from sofiap_ao_eea-user-11-RPR31.Q4U-20-26-2-a10bb-release-keys
-#-system/app/MotoDolbyV3/MotoDolbyV3.apk|574fa2a08b435824076ca60e66d42c950e82e296
-#-system_ext/priv-app/daxService/daxService.apk|d670c6b3221ea3cdf84c41e1062c348a186598ef
-#system/etc/permissions/com.motorola.dolby.dolbyui.features.xml|7eafc481b604505f057931a6f83c507e357886b3
-#system/etc/sysconfig/hiddenapi-whitelist-com.motorola.dolby.dolbyui.xml|ab4600814879c626a410e607107829faceec9d2c
-#system_ext/etc/permissions/com.dolby.daxservice.xml|86d4a12d3049d9de41db123026404f0c0bc40581
-#vendor/bin/hw/vendor.dolby.hardware.dms@1.0-service|7207a97fd3f00c854be4e4ddee98c881c61c2266
-#vendor/etc/init/vendor.dolby.hardware.dms@1.0-service.rc|e91adb7565e4fa126880917ed4d8f9ba4f9391d9
-#vendor/lib/libdapparamstorage.so|6fce779d3b4f21783d3d96e82f9b185107bbab38
-#vendor/lib/libstagefrightdolby.so|130b9da07e3c4a4ec04142049246eba18f1c350f
-#vendor/lib/vendor.dolby.hardware.dms@1.0.so|c1d8cea6e281a2d5c497b24d55f5703f0bcc2860
-#vendor/lib/soundfx/libswdap.so|0bd57dec350fb40ef3222723e59a7d5fe503ca7f
-#vendor/lib64/libdapparamstorage.so|c54376a54043115f11154b47b10f6156f904ed00
-#vendor/lib64/libdlbdsservice.so|77e3a0d44ce95c7e5139badb94087ea58211b022
-#vendor/lib64/soundfx/libswdap.so|be0056eb6359158a5f6aa5e2a8ed0fa260a82949
-#vendor/lib64/vendor.dolby.hardware.dms@1.0-impl.so|7afb6907a83aa7c9faa7308ae5b39338eadac1c8
-#vendor/lib64/vendor.dolby.hardware.dms@1.0.so|f3593ce869d036f98ddc7fc8223a8b55dcf0ca36
-
 # DSP service
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
@@ -324,6 +303,64 @@ vendor/lib64/libgpudataproducer.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
+
+# DSP service - from LA.UM.9.12.r1-10800-SMxx50.0
+vendor/bin/dspservice|97d6e5d59d3c4be93154f544fe2afef31e24d305
+vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f
+vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy|f060101b26d3674bb173e5fc95e118f56a8ac15d
+vendor/lib/vendor.qti.hardware.dsp@1.0.so|e553aafebc4b5f2908fc03f29b086cd1261aa454
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so|78e36705372a19ac664bb890dacd35a96e66bb32
+
+# Embedded Secure Element power manager - from LA.UM.9.12.r1-10800-SMxx50.0
+vendor/bin/hw/vendor.qti.esepowermanager@1.1-service|ae3e15534b0c8abd22f8a5e52a491df8c46bd0c2
+vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc|3c024c7135ec3dd8658624509ee61396a74f1ede
+vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so|17f648402c874e4f981caadd91438a525089e35d
+vendor/lib64/vendor.qti.esepowermanager@1.0.so|48b202753701401c03d386dae7a00bef4aff153e
+vendor/lib64/vendor.qti.esepowermanager@1.1.so|0d8e2aee61fbbfb345870ca965458babbef9912f
+
+# Feature enabler client - from LA.UM.9.12.r1-10800-SMxx50.0
+vendor/bin/feature_enabler_client|66fbd8bb671341184db4749d3c21c1d5facb8a1e
+vendor/etc/init/feature_enabler_client.rc|7c8e7cf20093d1a6d94d7de2debd53a7e51f8c29
+
+# Gatekeeper - from LA.UM.9.12.r1-10800-SMxx50.0
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|de1e8d026b16255040dbe6eb67faa73c9b656553
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|380693cb560e5aadf0e936dc97659e0642f75954
+
+# Graphics (Adreno) - from LA.UM.9.12.r1-10800-SMxx50.0
+-vendor/app/com.qualcomm.qti.gpudrivers.kona.api30/com.qualcomm.qti.gpudrivers.kona.api30.apk;PRESIGNED|6e85bf1b79c77e90c41863283655d3543d003a63
+vendor/lib/egl/eglSubDriverAndroid.so|f9ff4c8ec968243ca20287ff5476d7b23b7f24c5
+vendor/lib/egl/libEGL_adreno.so|cc8594371f6896dc425acbffd49d59f8040f612f
+vendor/lib/egl/libGLESv1_CM_adreno.so|b94ba8188a14dd262abac1b8d667bce3319cf344
+vendor/lib/egl/libGLESv2_adreno.so|9e6314bd990369bdd67b440787fccb2e7a7f527d
+vendor/lib/egl/libq3dtools_adreno.so|fa4ad58fe986911110d70eb5e2705e0d5bc8a7dc
+vendor/lib/egl/libq3dtools_esx.so|4c4eea6247c01d33881c4821d3a9bcb6aa74d299
+vendor/lib/libC2D2.so|267be7bd6768fa3b9bed2b9a42062cb5a77ca59b
+vendor/lib/libCB.so|a0c093baa2ccb10c09423baeba8b672f69a93754
+vendor/lib/libOpenCL.so|bb865516102b028121dfd92b0015099b7aaf5bf4
+vendor/lib/libVkLayer_q3dtools.so|5e95be3b18e6dcd47612c33d48cef38d940d04a2
+vendor/lib/libadreno_utils.so|f3b7184f573e60245d6526c61e772d59624d7545
+vendor/lib/libc2d30_bltlib.so|ae78e7eb6ea896a25a09a5c4d4a48fb2eebf8d1f
+vendor/lib/libgpudataproducer.so|5136b123f4725c7d67b16d4f6d0da19978a52764
+vendor/lib/libgsl.so|123e70ef7fa32673045c59a56c4a9716e01ef766
+vendor/lib/libllvm-glnext.so|10fcee8909c11b26e2475abd6bbe17329c730c43
+vendor/lib/libllvm-qcom.so|b3308e6a29a3bb78dbc0f6d68b2e972a6d134556
+vendor/lib64/egl/eglSubDriverAndroid.so|0ab79764a22565a6393359659782ec706685bd95
+vendor/lib64/egl/libEGL_adreno.so|2c40c72ce7cdeaa35140e953b7f301d111975199
+vendor/lib64/egl/libGLESv1_CM_adreno.so|e2e8a079e680bf92f686fb79146651c158f6e130
+vendor/lib64/egl/libGLESv2_adreno.so|5894751371689a5374675c8603d3e23bb75ebf21
+vendor/lib64/egl/libq3dtools_adreno.so|d8c8f25332d218a2dbd7cc5052e384b59d07c5a1
+vendor/lib64/egl/libq3dtools_esx.so|d22887d825df30894b6877936557d85bb764f61c
+vendor/lib64/libC2D2.so|6fb775e393ce7161b30e3a71fa0f320e86374425
+vendor/lib64/libCB.so|fa17112c18334d400644fd349c5627a11328cb8b
+vendor/lib64/libOpenCL.so|348f6e92ef78867f55388ae413e62d56f0a3a535
+vendor/lib64/libVkLayer_q3dtools.so|efccbd96b94107428972e018a8bfb18e731eb23a
+vendor/lib64/libadreno_utils.so|e830e31dc285368accb5472ce8a7294eb370d0c5
+vendor/lib64/libc2d30_bltlib.so|a922f93ab5acfd8abb0608773310e9c253bd2f7c
+vendor/lib64/libgpudataproducer.so|19cda99c2de0b4e689515b14b4eb1f079b8c184d
+vendor/lib64/libgsl.so|4d3cf2e016966e56af884dd435f1b21aad36ac92
+vendor/lib64/libllvm-glnext.so|29c1c155d5f4a0e598f22e44fb55083a54df756a
+vendor/lib64/libllvm-qcom.so|54f587cd2533fead20df3f67aff0378067add0d0
 
 # Graphics (Adreno firmware)
 vendor/firmware/a650_gmu.bin
